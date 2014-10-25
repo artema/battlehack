@@ -1,9 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+var model = require('../model/profile');
+
+//-----------------------------------------------
+//    GET /
+//-----------------------------------------------
+
 router.get('/', function(req, res) {
-  res.render('index.html', { title: 'Express', API_KEY: req.app.get('google-maps-api-key') });
+  if (!model.isAuthenticated) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('index', {
+    API_KEY: req.app.get('google-maps-api-key'),
+    start: [ 55.628935, 37.516552 ],
+    profile: model.profile    
+  });
 });
 
 module.exports = router;

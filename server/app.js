@@ -16,6 +16,11 @@ app.set('view engine', 'jade');
 
 app.engine('.html', require('ejs').renderFile);
 
+if (process.env.DEBUG) {
+  app.locals.pretty = true;
+	app.locals.compileDebug = true;
+}
+
 // constants
 app.set('google-maps-api-key', 'AIzaSyCuhxY3f8K6B89ZXGlXAX0rBhBwzK3TAec');
 
@@ -25,10 +30,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use(express.static(__dirname + '/../public'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

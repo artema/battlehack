@@ -1,8 +1,108 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+html, body { height: 100%; margin: 0; padding: 0; position:relative; }
+
 a {
-  color: #00B7FF;
+  color: blue;
+}
+
+#map-canvas {
+  margin: 0;
+  padding: 0;
+  position:absolute;
+  left:0;
+  right:0;
+  top:50px;
+  bottom:0;
+}
+
+#header {
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:40px;
+  background:#fff;
+}
+
+#header h1{
+  position:absolute;
+  left:20px;
+  top:5px;
+  font-size:16px;
+}
+#header h2{
+  position:absolute;
+  left:160px;
+  top:5px;
+  font-size:14px;
+  font-weight:normal;
+}
+
+#logout{
+  position:absolute;
+  right:20px;
+  top:15px;
+  width:300px;
+}
+#logout a{
+  float:right;
+}
+#logout span{
+  float:left;
+}
+
+.gmap-control-container {
+    margin: 5px;
+}
+.gmap-control {
+    cursor: pointer;
+    background-color: -moz-linear-gradient(center top , #FEFEFE, #F3F3F3);
+    background-color: #FEFEFE;
+    border: 1px solid #A9BBDF;
+    border-radius: 2px;
+    padding: 0 6px;
+    line-height: 160%;
+    font-size: 12px;
+    font-family: Arial,sans-serif;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.gmap-control:hover {
+    border: 1px solid #678AC7;
+}
+.gmap-control-active {
+    background-color: -moz-linear-gradient(center top , #6D8ACC, #7B98D9);
+    background-color: #6D8ACC;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #678AC7;
+}
+.gmap-control-legend {
+    position: absolute;
+    text-align: left;
+    z-index: -1;
+    top: 20px;
+    right: 0;
+    width: 150px;
+    height: 66px;
+    font-size: 10px;
+    background: #FEFEFE;
+    border: 1px solid #A9BBDF;
+    padding: 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+}
+.gmap-control-legend ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.gmap-control-legend li {
+    line-height: 160%;
 }
