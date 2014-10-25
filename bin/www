@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var debug = require('debug')('battlehack');
-var app = require('../app.js');
+var app = require('../server/app');
 
 var server = app.listen(process.env.PORT || 8081, function() {
   debug('Express server listening on port ' + server.address().port);

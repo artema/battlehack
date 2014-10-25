@@ -47,9 +47,7 @@ module.exports = function(grunt) {
         src: [
           'bin/**/*',
           'public/**/*',
-          'routes/**/*',
-          'views/**/*',
-          'app.js',
+          'server/**/*',
           'package.json'
         ],
         dest: '.deploy/' + pkg.version + '.zip'
