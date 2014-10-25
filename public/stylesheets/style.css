@@ -8,6 +8,22 @@ a {
   color: blue;
 }
 
+p {
+  margin:0;
+}
+
+button{
+  background: blue;
+  color:white;
+  font-weight:bold;
+  font-size:1.1em;
+  cursor:pointer;
+  padding:0 1em;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  line-height: 1.8em;
+}
+
 #map-canvas {
   margin: 0;
   padding: 0;
@@ -60,7 +76,57 @@ a {
   top:80px;
   background:#fff;
   border:1px solid #ccc;
+}
+
+.container-content{
   padding:10px;
+  position:relative;
+}
+
+.container-bottom{
+  padding:10px;
+  background-color:#ddd;
+  padding:10px;
+  border-top:1px solid #ccc;
+}
+
+.container-regular{
+  width:300px;
+}
+
+.container{
+  font-size:12px;
+}
+
+.container table{
+  width:100%;
+}
+
+.container h1{
+  font-size:16px;
+}
+
+.trip-right{
+  text-align:right;
+}
+
+.list-table{
+  margin-top:2em;
+}
+
+.list-table tr{
+  cursour:pointer;
+}
+
+.list-table td{
+  padding-top:0.75em;
+  padding-bottom:0.75em;
+}
+
+#trip-new{
+  position:absolute;
+  right:10px;
+  top:20px;
 }
 
 .gmap-control-container {

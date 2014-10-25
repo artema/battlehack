@@ -15,8 +15,7 @@ router.get('/', function(req, res) {
 
   res.render('index', {
     API_KEY: req.app.get('google-maps-api-key'),
-    start: [ 55.628935, 37.516552 ],
-    profile: model.profile    
+    start: [ 55.628935, 37.516552 ]
   });
 });
 

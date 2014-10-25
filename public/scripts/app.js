@@ -3,12 +3,16 @@
 
   var app = angular.module('BetterRoute', [
     'ngRoute',
-    'BetterRoute.controllers'
+    'ngResource',
+    'BetterRoute.controllers',
+    'BetterRoute.services'
   ]).
   config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
     $locationProvider.html5Mode(false);
 
-    $routeProvider.when('/', {templateUrl: '/partials/home.html', controller: 'HomeCtrl'});
+    $routeProvider.when('/', { templateUrl: '/partials/home.html', controller: 'HomeCtrl' });
+    $routeProvider.when('/trip/:tripId', { templateUrl: '/partials/trip.html', controller: 'TripCtrl' });
+    $routeProvider.when('/trip/:tripId/track/:trackId', { templateUrl: '/partials/track.html', controller: 'TrackCtrl' });
     $routeProvider.otherwise({redirectTo: '/'});
   }]);
 

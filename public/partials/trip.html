@@ -1,0 +1,15 @@
+<div class="container container-regular">
+  <div class="container-content">
+    <table class="list-table">
+      <tr ng-repeat="track in tracks" ng-click="showTrack(track.id)">
+        <td class="trip-left">
+          <span class="trip-name">{{track.name}}</span>
+        </td>
+        <td class="trip-right">
+          <span class="trip-estimate" ng-show="track.time > 0">from {{track.time}} min</span>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
