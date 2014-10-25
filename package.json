@@ -1,6 +1,6 @@
 {
   "name": "battlehack",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
   "main": "app.js",
   "dependencies": {
@@ -13,11 +13,15 @@
     "jade": "~1.6.0"
   },
   "devDependencies": {
+    "aws-sdk": "^2.0.23",
     "grunt": "^0.4.5",
+    "grunt-awsebtdeploy": "^0.1.11",
+    "grunt-bump": "0.0.16",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-node-inspector": "^0.1.5",
-    "grunt-nodemon": "^0.3.0"
+    "grunt-nodemon": "^0.3.0",
+    "grunt-zip": "^0.16.2"
   },
   "scripts": {
     "start": "node ./bin/www"
