@@ -154,9 +154,9 @@ angular.module('BetterRoute.controllers', [])
 
 .controller('TripAddCtrl', ['$scope', '$timeout', '$location', 'ProfileService', function($scope, $timeout, $location, ProfileService) {
   $scope.trip = {
-    name: 'sasd',
-    from: 'тверская 7',
-    to: 'академика Капицы 22'
+    name: '',
+    from: '',
+    to: ''
   };
   $scope.tracks = [];
 
