@@ -38,6 +38,10 @@ ProfileModel.prototype.getTrips = function(id) {
   return this._store.getTrips(id);
 };
 
+ProfileModel.prototype.addTrip = function(profileId, trip) {
+  return this._store.addTrip(profileId, trip);
+};
+
 //------------------------------------------------------------------------
 //
 //  LocalStore
@@ -47,6 +51,8 @@ ProfileModel.prototype.getTrips = function(id) {
 var LocalStore = function() {
   this._profiles = {};
   this._trips = {};
+  this._tripsIds = 1;
+  this._tracksIds = 3;
 
   var trips = [
     {
@@ -126,6 +132,18 @@ LocalStore.prototype.getTrips = function(profileId) {
     return when(this._trips[profileId]);
 
   return when.reject();
+};
+
+LocalStore.prototype.addTrip = function(profileId, trip) {
+  trip.id = ++this._tripsIds;
+
+  for (var i = 0; i < trip.tracks.length; i++) {
+    trip.tracks[i].id = ++this._tracksIds;
+  }
+
+  this._trips[profileId].push(trip);
+
+  return when.resolve(this._tripsIds);
 };
 
 //------------------------------------------------------------------------

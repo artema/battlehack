@@ -1,0 +1,47 @@
+<div class="container container-regular">
+  <div class="container-content">
+    <h1>New Trip</h1>
+    <form ng-submit="searchTrip()">
+      <table class="form-table">
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" ng-model="trip.name" required /></td>
+        </tr>
+        <tr>
+          <td>From:</td>
+          <td><input type="text" ng-model="trip.from" required /></td>
+        </tr>
+        <tr>
+          <td>To:</td>
+          <td><input type="text" ng-model="trip.to" required /></td>
+        </tr>
+      </table>
+      <p class="form-controls">
+        <button type="submit" class="secondary">Search</buttom>
+        <button ng-show="searchComplete" ng-click="addTrip()">Add track to compare</button>
+      </p>
+    </form>
+    <div ng-show="searchComplete">
+      <div class="container-info">
+        <p>Move points on road to create your favorite track.</p>
+      </div>
+      <h1>Tracks</h1>
+      <table class="list-table">
+        <tr ng-repeat="track in tracks">
+          <td class="trip-left">
+            <input type="text" ng-model="track.name" required />
+          </td>
+          <td class="trip-right">
+            <button class="secondary" ng-click="removeTrack(track)">Delete</button>
+          </td>
+        </tr>
+      </table>
+      <p class="form-controls">
+        <div class="container-info" ng-show="!fillComplete">
+          <p>Add 2 or more track to create a trip.</p>
+        </div>
+        <button ng-click="saveTrip()" ng-show="fillComplete">Save trip and tracks</button>
+      </p>
+    </div>
+  </div>
+</div>

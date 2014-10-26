@@ -1,9 +1,9 @@
 doctype html
 html(ng-app='BetterRoute')
   head
-    title Better Route
+    title Better Road
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(type='text/javascript', src='http://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects,package.route&lang=ru-RU')
+    script(type='text/javascript', src='http://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects,package.route,package.traffic&lang=en-US')
     script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js')
     script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.js')
@@ -23,7 +23,16 @@ html(ng-app='BetterRoute')
           center: [ !{start[0]}, !{start[1]} ],
           zoom: 14
         });
+
+        var trafficControl = new ymaps.control.TrafficControl({
+            providerKey: 'traffic#actual',
+            shown: true
+        });
+
+        myMap.controls.add(trafficControl);
+        trafficControl.getProvider('traffic#actual').state.set('infoLayerShown', true);
       }
+
       ymaps.ready(init);
     div#map-canvas
     div#header

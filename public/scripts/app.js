@@ -11,6 +11,7 @@
     $locationProvider.html5Mode(false);
 
     $routeProvider.when('/', { templateUrl: '/partials/home.html', controller: 'HomeCtrl' });
+    $routeProvider.when('/trip/add', { templateUrl: '/partials/trip-add.html', controller: 'TripAddCtrl' });
     $routeProvider.when('/trip/:tripId', { templateUrl: '/partials/trip.html', controller: 'TripCtrl' });
     $routeProvider.when('/trip/:tripId/track/:trackId', { templateUrl: '/partials/track.html', controller: 'TrackCtrl' });
     $routeProvider.otherwise({redirectTo: '/'});

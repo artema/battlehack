@@ -35,4 +35,20 @@ router.get('/api/trips', function(req, res) {
   });
 });
 
+//-----------------------------------------------
+//    PUT /api/trips
+//-----------------------------------------------
+
+router.put('/api/trips', function(req, res) {
+  var profileId = 1;
+console.log(req.body)
+  model.addTrip(profileId, req.body).then(function(id) {
+    res.json({ id: id });
+    res.end();
+  }, function(e) {
+    res.status(500);
+    res.end();
+  });
+});
+
 module.exports = router;

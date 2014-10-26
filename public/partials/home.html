@@ -1,7 +1,7 @@
 <div class="container container-regular">
   <div class="container-content">
     <h1>Trips</h1>
-    <button id="trip-new">Create new</button>
+    <button id="trip-new" ng-click="createTrip()">Create new</button>
     <table class="list-table">
       <tr ng-repeat="trip in trips" ng-click="showTrip(trip.id)">
         <td class="trip-left">
